@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GetEasy</string>
+    <string name="button_options">menu_options</string>
+    <string name="tab_reminders">Reminders</string>
+    <string name="date_type_s">Date and time:</string>
+    <string name="hint_date_and_time">Type your date here</string>
+    <string name="reminder_type_s">Your reminder:</string>
+    <string name="hint_reminder">Type your reminder</string>
+</resources>

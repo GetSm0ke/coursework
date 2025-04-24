@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/tab_up"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:orientation="horizontal"
+        android:background="@color/main_up_background">
+
+
+        <ImageButton
+            android:id="@+id/option_button"
+            android:src="@drawable/ic_option"
+            android:contentDescription="@string/button_options"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:layout_alignParentBottom="true"
+        />
+
+        <TextView
+            android:text="@string/tab_reminders"
+            android:textColor="@color/white"
+            android:fontFamily="@font/krona_regular"
+            android:textSize="20sp"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:layout_alignTop="@id/option_button"
+            android:layout_alignBottom="@id/option_button"
+            />
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:src="@drawable/ic_calendar"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="13dp"
+        android:background="@android:color/transparent"
+
+        />
+    <LinearLayout
+        android:layout_gravity="bottom"
+        android:paddingStart="13dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="13dp"
+        android:paddingBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+
+
+        android:background="@drawable/shape_typ_window"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="@string/date_type_s"
+                android:textColor="@color/black"
+                android:fontFamily="@font/krona_regular"
+                android:textSize="12sp"
+
+                />
+            <EditText
+                android:importantForAutofill="no"
+                android:inputType="time"
+                android:background="@drawable/shape_text_edit"
+                android:hint="@string/hint_date_and_time"
+                android:textColorHint="@color/hint_text_color"
+
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                />
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+
+            android:fontFamily="@font/krona_regular"
+            android:text="@string/reminder_type_s"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+
+            />
+
+        <EditText
+            android:background="@drawable/shape_text_edit"
+            android:hint="@string/hint_reminder"
+            android:textColorHint="@color/hint_text_color"
+
+            android:layout_marginTop="5dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:gravity="start"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+
+
+            >
+        </EditText>
+    </LinearLayout>
+
+
+</LinearLayout>
