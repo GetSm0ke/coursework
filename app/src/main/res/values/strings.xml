@@ -6,4 +6,6 @@
     <string name="hint_date_and_time">Type your date here</string>
     <string name="reminder_type_s">Your reminder:</string>
     <string name="hint_reminder">Type your reminder</string>
+    <string name="option_but">Option button</string>
+    <string name="calendar_but">Open your all reminders</string>
 </resources>
