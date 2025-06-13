@@ -4,9 +4,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import android.content.Context
-import com.example.geteasy.data.local.dao.ReminderDao
 import com.example.geteasy.data.local.entities.Reminder
-import com.example.geteasy.data.local.dao.NoteDao
 import com.example.geteasy.data.local.entities.Note
 import com.example.geteasy.data.local.dao.DailyTaskDao
 import com.example.geteasy.data.local.entities.DailyTask

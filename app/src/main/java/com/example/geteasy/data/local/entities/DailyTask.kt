@@ -8,6 +8,7 @@ data class DailyTask(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val title: String,
     val isCompleted: Boolean = false,
+    val frequencyText: String,
     val repeatDays: String,
-    val reminderTime: Long? = null
+    val reminderTime: Long
 )

@@ -16,6 +16,12 @@ import androidx.fragment.app.Fragment
 import com.example.geteasy.R
 import com.example.geteasy.activities.DrawerController
 import com.example.geteasy.databinding.FragmentDailyBinding
+import com.example.geteasy.data.local.entities.DailyTask
+import androidx.lifecycle.lifecycleScope
+import com.example.geteasy.adapters.DailyTaskAdapter
+import androidx.fragment.app.viewModels
+import com.example.geteasy.viewmodels.DailyTaskViewModel
+import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -24,6 +30,7 @@ class DailyFragment : Fragment() {
     private val binding get() = _binding!!
     private val calendar = Calendar.getInstance()
     private var drawerController: DrawerController? = null
+    private val viewModel: DailyTaskViewModel by viewModels()
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -92,6 +99,8 @@ class DailyFragment : Fragment() {
         ).show()
     }
 
+
+
     private fun updateDateTimeDisplay() {
         val dateFormat = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
         binding.dateEditText.setText(dateFormat.format(calendar.time))
@@ -143,6 +152,15 @@ class DailyFragment : Fragment() {
             .show()
     }
 
+    private fun parseFrequency(frequencyText: String): String {
+        return when {
+            frequencyText.contains("day") -> "1,2,3,4,5,6,7" // Ежедневно
+            frequencyText.contains("week") -> "1,3,5"         // Пн, Ср, Пт
+            frequencyText.contains("month") -> "1"             // 1-е число месяца
+            else -> ""
+        }
+    }
+
     private fun setupSaveButton() {
         binding.saveReminder.setOnClickListener {
             saveReminder()
@@ -152,15 +170,33 @@ class DailyFragment : Fragment() {
     private fun saveReminder() {
         val dateTime = calendar.timeInMillis
         val frequency = binding.dateEditText2.text.toString()
-        val reminderText = binding.dateEditTextReminder.text.toString()
+        val title = binding.dateEditTextReminder.text.toString()
 
-        if (reminderText.isBlank()) {
+        if (title.isBlank()) {
             binding.dateEditTextReminder.error = getString(R.string.daily_text_error)
             return
         }
 
-        // Здесь сохраняем данные (в БД, ViewModel и т.д.)
-        showToast(getString(R.string.daily_saved))
+        val task = DailyTask(
+            title = title,
+            reminderTime = calendar.timeInMillis,
+            frequencyText = binding.dateEditText2.text.toString(),
+            repeatDays = parseFrequency(binding.dateEditText2.text.toString())
+        )
+
+        lifecycleScope.launch {
+            viewModel.addTask(task)
+            showToast("Сохранено!")
+            updateTaskList()
+        }
+    }
+
+    private fun updateTaskList() {
+        lifecycleScope.launch {
+            viewModel.tasks.collect { tasks ->
+                (binding.tasksRecyclerView.adapter as DailyTaskAdapter).submitList(tasks)
+            }
+        }
     }
 
     private fun showToast(message: String) {
