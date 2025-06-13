@@ -1,11 +1,54 @@
 <resources>
     <string name="app_name">GetEasy</string>
-    <string name="button_options">menu_options</string>
+<!--tab strings-->
     <string name="tab_reminders">Reminders</string>
-    <string name="date_type_s">Date and time:</string>
-    <string name="hint_date_and_time">Type your date here</string>
-    <string name="reminder_type_s">Your reminder:</string>
-    <string name="hint_reminder">Type your reminder</string>
+    <string name="tab_daily">Daily</string>
+    <string name="tab_settings">Settings</string>
+    <string name="tab_notes">Notes</string>
+<!--button strings-->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="option_but">Option button</string>
     <string name="calendar_but">Open your all reminders</string>
+    <string name="button_options">menu_options</string>
+<!--pattern strings-->
+    <string name="reminder_type_s">Your reminder:</string>
+    <string name="hint_reminder">Type your reminder</string>
+
+
+    <string name="date_type_s">Date and time:</string>
+    <string name="hint_date_and_time">Type your date here</string>
+
+    <string name="notifications_type_s">Notifications:</string>
+    <string name="hint_notifications">Select notifications</string>
+
+    <string name="header_type_s">Header:</string>
+    <string name="hint_header">Type your header here</string>
+    <string name="hint_note">Type your note here</string>
+    <string name="note_saved">Note saved!</string>
+    <string name="note_text_error">Write a note</string>
+
+    <string name="frequency_text">Choose your notifications frequency</string>
+
+<!--Frequency shit-->
+    <string name="select_frequency">Choose frequency</string>
+    <string name="done">Done</string>
+    <string name="cancel">Cancel</string>
+    <string name="day">day</string>
+    <string name="week">week</string>
+    <string name="month">month</string>
+    <string name="year">year</string>
+    <string name="frequency_format">Every %1$d %2$s</string>
+    <string name="reminder_text_error">Write a reminder</string>
+    <string name="reminder_saved">Reminder saved!</string>
+    <string name="daily_saved">Daily saved!</string>
+    <string name="daily_text_error">Write your daily</string>
+
+    <string-array name="notification_periods">
+        <item>Day</item>
+        <item>Week</item>
+        <item>Month</item>
+        <item>Year</item>
+    </string-array>
+
 </resources>

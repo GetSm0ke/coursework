@@ -7,5 +7,4 @@
         <item name="android:textColorHint">@color/hint_text_color</item>
     </style>
 
-
 </resources>

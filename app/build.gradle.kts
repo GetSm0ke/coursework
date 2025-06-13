@@ -1,3 +1,5 @@
+import android.databinding.tool.writer.ViewBinding
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -10,8 +12,8 @@ android {
     compileSdk = 35
 
     buildFeatures {
-        viewBinding = true
         dataBinding = true
+        viewBinding = true
     }
 
     defaultConfig {
@@ -43,6 +45,11 @@ android {
 }
 
 dependencies {
+    implementation("androidx.room:room-runtime:2.7.1")
+    annotationProcessor("androidx.room:room-compiler:2.7.1")
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -51,4 +58,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.databinding)
+
 }

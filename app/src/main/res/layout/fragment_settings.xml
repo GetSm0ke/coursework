@@ -1,0 +1,52 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    tools:context=".fragments.RemindersFragment">
+
+
+    <RelativeLayout
+        android:id="@+id/tab_up"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_marginBottom="13dp"
+        android:orientation="horizontal"
+        android:background="@color/main_up_background">
+
+
+        <ImageButton
+            android:id="@+id/option_button"
+            android:src="@drawable/ic_option"
+            android:contentDescription="@string/button_options"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/button_anim"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            />
+
+        <TextView
+            android:text="@string/tab_settings"
+            android:textColor="@color/white"
+            android:fontFamily="@font/krona_regular"
+            android:textSize="20sp"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:layout_alignTop="@id/option_button"
+            android:layout_alignBottom="@id/option_button"
+            />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

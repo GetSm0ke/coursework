@@ -1,0 +1,209 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    tools:context=".fragments.RemindersFragment">
+
+
+    <RelativeLayout
+        android:id="@+id/tab_up"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_marginBottom="13dp"
+        android:orientation="horizontal"
+        android:background="@color/main_up_background">
+
+
+        <ImageButton
+            android:id="@+id/option_button"
+            android:src="@drawable/ic_option"
+            android:contentDescription="@string/button_options"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/button_anim"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            />
+
+        <TextView
+            android:text="@string/tab_notes"
+            android:textColor="@color/white"
+            android:fontFamily="@font/krona_regular"
+            android:textSize="20sp"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:layout_alignTop="@id/option_button"
+            android:layout_alignBottom="@id/option_button"
+            />
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/save_note"
+        android:contentDescription="@string/calendar_but"
+        android:src="@drawable/ic_notes"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/transparent"
+
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+
+        android:paddingStart="13dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="13dp"
+        android:paddingBottom="16dp"
+
+        android:background="@drawable/shape_typ_window">
+
+        <TextView
+            android:id="@+id/Date_and_time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="5dp"
+
+            android:layout_gravity="center"
+            android:fontFamily="@font/krona_regular"
+            android:text="@string/header_type_s"
+            android:textColor="@color/black"
+
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/dateEditText"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/dateEditText"
+            style="@style/text_basic"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:background="@drawable/shape_text"
+            android:gravity="center_vertical"
+
+
+            android:hint="@string/hint_header"
+            android:importantForAutofill="no"
+            android:inputType="date"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toEndOf="@+id/Date_and_time_text"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/dateEditTextReminder"
+            style="@style/text_basic"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/shape_text"
+            android:gravity="start"
+
+            android:hint="@string/hint_note"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dateEditText"
+            tools:layout_editor_absoluteX="13dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:background="@drawable/shape_typ_window"
+
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+
+        android:paddingStart="13dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="13dp"
+        android:paddingBottom="16dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="71dp"
+            android:background="@drawable/shape_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/text_basic"
+                android:layout_width="140dp"
+                android:layout_height="19dp"
+                android:background="@drawable/shape_text_edit"
+                android:paddingStart="10dp"
+                android:paddingTop="2dp"
+                android:paddingEnd="10dp"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="@+id/textView"
+                tools:text="Example head" />
+
+            <ImageButton
+                android:id="@+id/edit_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/button_anim_edit"
+
+                android:clickable="true"
+                android:contentDescription="@string/button_options"
+                android:focusable="true"
+                android:src="@drawable/ic_pen"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/text_basic"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+
+
+                android:paddingTop="2dp"
+                android:paddingEnd="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/edit_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                tools:text="Example reminder text bla bla bla bla bla bla bla bla bla bla" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
